@@ -25,9 +25,11 @@ def generate_launch_description():
         executable="joint_state_publisher_gui",
     )
 
+    rviz_config_path = os.path.join(
+        get_package_share_path("my_robot_description"), "rviz", "display.rviz"
+    )
     rviz_node = Node(
-        package="rviz2",
-        executable="rviz2",
+        package="rviz2", executable="rviz2", arguments=["-d", rviz_config_path]
     )
 
     return LaunchDescription(
