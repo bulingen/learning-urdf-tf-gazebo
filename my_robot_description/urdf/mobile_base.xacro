@@ -13,16 +13,20 @@
 
     <link name="base_link">
         <visual>
-            <!-- <geometry>
-                <box size="${base_length} ${base_width} ${base_height}" />
-            </geometry> -->
             <geometry>
+                <box size="${base_length} ${base_width} ${base_height}" />
+            </geometry>
+            <!-- <geometry>
                 <mesh filename="package://my_robot_description/meshes/waffle_base.stl"
                     scale="0.002 0.002 0.002" />
-            </geometry>
+            </geometry> -->
             <origin xyz="0 0 ${base_height/2}" rpy="0 0 0" />
             <material name="blue" />
         </visual>
+        <xacro:box_inertia
+            m="5.0" x="${base_length}" y="${base_width}" z="${base_height}"
+            o_xyz="0 0 ${base_height/2}" o_rpy="0 0 0"
+        />
     </link>
 
     <xacro:macro name="wheel_link" params="prefix">
