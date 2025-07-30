@@ -31,4 +31,10 @@ ros2 run rviz2 rviz2
 
 # view the raw urdf, which has been generated with xacro
 ros2 param get /robot_state_publisher robot_description
+
+# open gazebo from ros2 command
+ros2 launch ros_gz_sim gz_sim.launch.py gz_args:=empty.sdf
+
+# open gazebo from terminal
+gz sim
 ```
