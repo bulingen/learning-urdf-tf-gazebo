@@ -38,3 +38,15 @@ ros2 launch ros_gz_sim gz_sim.launch.py gz_args:=empty.sdf
 # open gazebo from terminal
 gz sim
 ```
+
+## Spawn a robot in Gazebo
+
+```bash
+ros2 run robot_state_publisher robot_state_publisher --ros-args -p robot_description:="$(xacro my_robot.urdf.xacro)"
+
+ros2 launch ros_gz_sim gz_sim.launch.py gz_args:="empty.sdf -r"
+
+ros2 run ros_gz_sim create -topic robot_description
+
+ros2 run rviz2 rviz2 -d src/my_robot_description/rviz/display.rviz
+```
