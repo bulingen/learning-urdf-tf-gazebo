@@ -28,4 +28,7 @@ ros2 run joint_state_publisher_gui joint_state_publisher_gui
 rqt_graph
 
 ros2 run rviz2 rviz2
+
+# view the raw urdf, which has been generated with xacro
+ros2 param get /robot_state_publisher robot_description
 ```
