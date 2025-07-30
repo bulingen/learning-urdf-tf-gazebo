@@ -37,6 +37,9 @@ ros2 launch ros_gz_sim gz_sim.launch.py gz_args:=empty.sdf
 
 # open gazebo from terminal
 gz sim
+
+# info about gazebo topic
+gz topic -i -t /some_topic_name
 ```
 
 ## Spawn a robot in Gazebo
