@@ -39,10 +39,11 @@
             <geometry>
                 <cylinder radius="${arm_segment_radius}" length="${arm_segment_length}" />
             </geometry>
+            <origin xyz="0 0 ${arm_segment_length/2}" rpy="0 0 0" />
         </collision>
         <xacro:solid_cylinder_inertia
             m="0.3" r="${arm_segment_radius}" l="${arm_segment_length}"
-            o_xyz="0 0 0" o_rpy="0 0 0"
+            o_xyz="0 0 ${arm_segment_length/2}" o_rpy="0 0 0"
         />
     </link>
 
@@ -58,10 +59,11 @@
             <geometry>
                 <cylinder radius="${arm_segment_radius}" length="${arm_segment_length}" />
             </geometry>
+            <origin xyz="0 0 ${arm_segment_length/2}" rpy="0 0 0" />
         </collision>
         <xacro:solid_cylinder_inertia
             m="0.3" r="${arm_segment_radius}" l="${arm_segment_length}"
-            o_xyz="0 0 0" o_rpy="0 0 0"
+            o_xyz="0 0 ${arm_segment_length/2}" o_rpy="0 0 0"
         />
     </link>
 
