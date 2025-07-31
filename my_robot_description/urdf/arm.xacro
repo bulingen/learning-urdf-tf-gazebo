@@ -44,7 +44,25 @@
             o_xyz="0 0 0" o_rpy="0 0 0"
         />
     </link>
-    <!-- <link name="hand_link"></link> -->
+
+    <link name="hand_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${arm_segment_radius}" length="${arm_segment_length}" />
+            </geometry>
+            <material name="grey" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${arm_segment_radius}" length="${arm_segment_length}" />
+            </geometry>
+        </collision>
+        <xacro:solid_cylinder_inertia
+            m="0.3" r="${arm_segment_radius}" l="${arm_segment_length}"
+            o_xyz="0 0 0" o_rpy="0 0 0"
+        />
+    </link>
 
     <joint name="base_arm_base_joint" type="fixed">
         <parent link="base_link" />
@@ -56,5 +74,11 @@
         <parent link="arm_base_link" />
         <child link="forearm_link" />
         <origin xyz="0 0 ${arm_segment_length/2 + arm_base_height/2}" rpy="0 0 0" />
+    </joint>
+
+    <joint name="forearm_hand_joint" type="fixed">
+        <parent link="forearm_link" />
+        <child link="hand_link" />
+        <origin xyz="0 0 ${arm_segment_length}" rpy="0 0 0" />
     </joint>
 </robot>
