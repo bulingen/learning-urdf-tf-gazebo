@@ -19,6 +19,7 @@
             <geometry>
                 <box size="${arm_base_length} ${arm_base_width} ${arm_base_height}" />
             </geometry>
+            <origin xyz="0 0 ${arm_base_height/2}" rpy="0 0 0" />
         </collision>
         <xacro:box_inertia
             m="0.5" x="${arm_base_length}" y="${arm_base_width}" z="${arm_base_height}"
