@@ -53,3 +53,10 @@ ros2 run ros_gz_sim create -topic robot_description
 
 ros2 run rviz2 rviz2 -d src/my_robot_description/rviz/display.rviz
 ```
+
+```bash
+# make robot go in gazebo
+ros2 topic pub -r 1 /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5}, angular: {z: 0.5}}"
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
