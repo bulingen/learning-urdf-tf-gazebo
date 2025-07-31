@@ -60,3 +60,10 @@ ros2 topic pub -r 1 /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5}, angular
 
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
+
+## Control arm in gazebo
+
+```bash
+ros2 topic pub /hand/cmd_pos std_msgs/msg/Float64 "{data: 0.0}"
+ros2 topic pub /forearm/cmd_pos std_msgs/msg/Float64 "{data: 0.0}"
+```
